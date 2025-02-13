@@ -13,6 +13,19 @@ function ValentinesProposal() {
   const yesButtonSize = noCount * 20 + 16;
 
   useEffect(() => {
+    const handleTouchMove = (e) => {
+      if (e.touches.length > 1) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener("touchmove", handleTouchMove, { passive: false });
+    return () => {
+      document.removeEventListener("touchmove", handleTouchMove);
+    };
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),

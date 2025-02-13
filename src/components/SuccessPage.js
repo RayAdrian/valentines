@@ -1,11 +1,54 @@
 import { useEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
 import "./SuccessPage.css";
-
 function SuccessPage() {
   const [audio] = useState(new Audio(require("../assets/palagi.mp3")));
 
   useEffect(() => {
+    const handleTouchMove = (e) => {
+      if (e.touches.length > 1) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener("touchmove", handleTouchMove, { passive: false });
+    return () => {
+      document.removeEventListener("touchmove", handleTouchMove);
+    };
+  }, []);
+
+  useEffect(() => {
+    const playAudio = async () => {
+      try {
+        audio.play();
+      } catch (error) {
+        // Create a play button if autoplay fails
+        const playButton = document.createElement("button");
+        playButton.innerHTML = "🎵 Play Music";
+        playButton.style.cssText = `
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          padding: 10px 20px;
+          background: rgba(255, 255, 255, 0.9);
+          border: none;
+          border-radius: 50px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+          z-index: 1000;
+          cursor: pointer;
+        `;
+
+        playButton.onclick = () => {
+          audio.play();
+          playButton.remove();
+        };
+
+        document.body.appendChild(playButton);
+      }
+    };
+
+    playAudio();
+
     // Scroll to hero section when component mounts
     const heroSection = document.querySelector(".hero-section");
     if (heroSection) {
@@ -24,16 +67,6 @@ function SuccessPage() {
     }
 
     requestAnimationFrame(raf);
-
-    const playAudio = async () => {
-      try {
-        await audio.play();
-      } catch (error) {
-        console.log("Audio playback failed:", error);
-      }
-    };
-
-    playAudio();
 
     const observer = new IntersectionObserver(
       (entries) => {

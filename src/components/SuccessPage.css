@@ -155,3 +155,35 @@ p {
   transform: rotate(45deg);
   transform-origin: 100% 100%;
 }
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .memory-text,
+  .future-text {
+    font-size: 1.6rem;
+    padding: 0 1rem;
+  }
+
+  .parallax-image {
+    height: 50vh;
+  }
+
+  .hearts-animation {
+    font-size: 20px;
+  }
+
+  section {
+    padding: 1rem;
+  }
+}
