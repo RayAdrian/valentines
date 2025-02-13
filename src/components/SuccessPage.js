@@ -43,6 +43,7 @@ function SuccessPage() {
         };
 
         document.body.appendChild(playButton);
+        audio.play();
       } else {
         try {
           audio.play();
