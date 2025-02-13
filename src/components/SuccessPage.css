@@ -34,7 +34,6 @@ section {
   will-change: transform;
   transition: transform 0.1s linear;
 }
-
 .memory-text,
 .future-text {
   font-size: 2rem;
@@ -51,7 +50,6 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
-
 .hearts-animation {
   font-size: 28px;
   margin: 20px 0;

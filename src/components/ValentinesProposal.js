@@ -33,7 +33,7 @@ function ValentinesProposal() {
 
   const handleYesClick = () => {
     setYesPressed(true);
-    navigate("/success");
+    window.location.href = "/success";
   };
 
   const handleNoClick = () => {
