@@ -59,7 +59,8 @@ function ValentinesProposal() {
         <div className="parallax-image" data-speed="0.5">
           <img
             src={require("../assets/images/couple.jpeg")}
-            alt="romantic roses"
+            alt="couple"
+            loading="eager"
           />
         </div>
         <h1 className="main-title">Will you be my Valentine? 💝</h1>
