@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1d1bdad4.css",
+    "main.js": "/static/js/main.b568f143.js",
+    "static/media/palagi.mp3": "/static/media/palagi.e718e6bdfe7345e82151.mp3",
+    "static/media/ninyo.jpeg": "/static/media/ninyo.70de6f38a3c8bb40996d.jpeg",
+    "static/media/couple.jpeg": "/static/media/couple.66461538b1538a6b7bf8.jpeg",
+    "static/media/beach.jpeg": "/static/media/beach.ca4e2ce9e58f787f4cf2.jpeg",
+    "static/media/sunset.jpeg": "/static/media/sunset.32382c9a61690538f064.jpeg",
+    "index.html": "/index.html",
+    "main.1d1bdad4.css.map": "/static/css/main.1d1bdad4.css.map",
+    "main.b568f143.js.map": "/static/js/main.b568f143.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1d1bdad4.css",
+    "static/js/main.b568f143.js"
+  ]
+}
