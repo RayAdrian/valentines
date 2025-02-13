@@ -19,10 +19,8 @@ function SuccessPage() {
 
   useEffect(() => {
     const playAudio = async () => {
-      try {
-        audio.play();
-      } catch (error) {
-        // Create a play button if autoplay fails
+      const isMobile = window.innerWidth <= 768;
+      if (isMobile) {
         const playButton = document.createElement("button");
         playButton.innerHTML = "🎵 Play Music";
         playButton.style.cssText = `
@@ -36,6 +34,7 @@ function SuccessPage() {
           box-shadow: 0 2px 10px rgba(0,0,0,0.2);
           z-index: 1000;
           cursor: pointer;
+          font-size: 16px;
         `;
 
         playButton.onclick = () => {
@@ -44,6 +43,33 @@ function SuccessPage() {
         };
 
         document.body.appendChild(playButton);
+      } else {
+        try {
+          audio.play();
+        } catch (error) {
+          const playButton = document.createElement("button");
+          playButton.innerHTML = "🎵 Play Music";
+          playButton.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            cursor: pointer;
+            font-size: 16px;
+          `;
+
+          playButton.onclick = () => {
+            audio.play();
+            playButton.remove();
+          };
+
+          document.body.appendChild(playButton);
+        }
       }
     };
 
