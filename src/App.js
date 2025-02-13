@@ -7,7 +7,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<ValentinesProposal />} />
-        <Route path="/success" element={<SuccessPage />} />
+        <Route path="/my-valentine" element={<SuccessPage />} />
       </Routes>
     </Router>
   );

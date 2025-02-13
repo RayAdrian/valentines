@@ -3,7 +3,7 @@ import Lenis from "@studio-freight/lenis";
 import "./SuccessPage.css";
 
 function SuccessPage() {
-  const [audio] = useState(new Audio("../assets/palagi.mp3"));
+  const [audio] = useState(new Audio(require("../assets/palagi.mp3")));
 
   useEffect(() => {
     // Scroll to hero section when component mounts
