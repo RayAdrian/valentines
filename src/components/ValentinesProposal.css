@@ -1,0 +1,162 @@
+.proposal-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8bbd0, #e91e63);
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  padding: 2rem;
+}
+
+.parallax-image {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.parallax-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+.main-title {
+  font-family: "Great Vibes", cursive;
+  font-size: 4.5rem;
+  color: #ffffff;
+
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
+  animation: fadeIn 1.5s ease-in;
+}
+.decision-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.buttons-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  animation: slideUp 1s ease-out;
+  z-index: 10;
+  position: relative;
+}
+.buttons-container button {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.yes-button,
+.no-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.yes-button {
+  background: #ff4081;
+  color: white;
+  box-shadow: 0 5px 15px rgba(255, 64, 129, 0.4);
+}
+
+.yes-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 64, 129, 0.6);
+}
+
+.no-button {
+  background: #ffffff;
+  color: #e91e63;
+  opacity: 0.8;
+}
+
+.no-button:hover {
+  opacity: 0.6;
+  transform: translateY(5px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.heart-gif {
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+.lottie-section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.lottie-container {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 182, 193, 0.1);
+}
+.lottie-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.lottie-background > div {
+  width: 100%;
+  height: 100%;
+}
+
+.intro-section {
+  background: linear-gradient(135deg, #f8bbd0, #e91e63);
+  position: relative;
+  z-index: 2;
+}
+
+.lottie-section,
+.decision-section {
+  position: relative;
+  z-index: 1;
+}
